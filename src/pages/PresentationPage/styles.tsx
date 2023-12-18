@@ -68,19 +68,14 @@ export const SectionCustomizeYourListen = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 120px;
+  margin: 120px;
   & img {
     width: 300px;
     height: 400px;
   }
-  & div {
-    display: flex;
-    flex-wrap: wrap;
-    & h1 {
-      font-size: 2rem;
-      flex-basis: 100%;
-      margin-bottom: 0;
-      margin-top: 50px;
-    }
+  & h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 50px;
   }
 `

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { ReactElement, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Wrapper, Menu, SectionBecomeSubscriber, SectionPlaylist, SectionCustomizeYourListen } from './styles'
 
@@ -18,10 +19,10 @@ const PresentationPage = (): ReactElement => {
       <Menu isfixed={fixedMenu}>
         <img
           src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXhha25kd21ucHNhNG1lYmNteHFmbmNlb3FhdDA0cWRzMG8wNXV3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iH1pvl2ECqOMKASI1p/giphy.gif"
-          width="100"
+          width="130"
           height="100"
         />
-        <a href="#">Login</a>
+        <Link to='/login'>Login</Link>
       </Menu>
       <Wrapper>
         <SectionBecomeSubscriber isfixed={fixedMenu}>
@@ -37,10 +38,8 @@ const PresentationPage = (): ReactElement => {
         </SectionPlaylist>
         <SectionCustomizeYourListen>
           <img src="https://support.apple.com/library/content/dam/edam/applecare/images/pt_BR/airpods/ios15-iphone13-pro-airpods-headphone-audio-levels-animation.gif" alt="Gif App" />
-          <div>
-            <h1>Personalize sua forma de ouvir</h1>
-            <p>Combine seus artistas favoritos e crie uma experiência musical do seu jeito.</p>
-          </div>
+          <h1>Personalize sua forma de ouvir</h1>
+          <p>Combine seus artistas favoritos e crie uma experiência musical do seu jeito.</p>
         </SectionCustomizeYourListen>
       </Wrapper>
     </>

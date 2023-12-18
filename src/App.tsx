@@ -1,11 +1,12 @@
 import './App.css';
-import PresentationPage from './pages/PresentationPage';
+import RoutesApplication from './routes';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <PresentationPage />
-    </>
+    <BrowserRouter>
+      <RoutesApplication />
+    </BrowserRouter>
   );
 }
 
