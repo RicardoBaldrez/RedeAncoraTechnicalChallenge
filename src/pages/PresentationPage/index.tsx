@@ -27,7 +27,6 @@ const PresentationPage = (): ReactElement => {
       <Wrapper>
         <SectionBecomeSubscriber isfixed={fixedMenu}>
           <h1> WaveBeat Premium para aproveitar músicas sem anúncios, off-line e com a tela bloqueada</h1>
-          <p>Faça seu <button>Login</button> para aproveitar o máximo</p>
         </SectionBecomeSubscriber>
         <SectionPlaylist>
           <img src="https://s2.glbimg.com/fCZRC09UNj65CYfCzgy0fYTX54c=/e.glbimg.com/og/ed/f/original/2015/10/16/capaplaylist_1.jpg" alt="PlaylistOne" />

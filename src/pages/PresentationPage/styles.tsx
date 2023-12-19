@@ -12,6 +12,24 @@ export const Menu = styled.div<{ isfixed: boolean; }>`
   top: 0;
   background-color: #000;
   border: ${props => props.isfixed ? '1px solid #fff' : 'none'};
+  & a {
+    border: 2px solid red;
+    padding: 12px 40px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    background-color: var(--secondary-blue-green);
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: .8rem;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      background-color: var(--primary-purple);
+    }
+  }
 `
 
 export const Wrapper = styled.div`
@@ -53,6 +71,7 @@ export const SectionPlaylist = styled.section`
   & img {
     width: 200px;
     height: 200px;
+    border-radius: 5px;
   }
   & img:nth-child(2) {
     width: 300px;
@@ -61,6 +80,7 @@ export const SectionPlaylist = styled.section`
   & h1 {
     font-size: 2rem;
     margin-bottom: 0;
+    margin-top: 50px;
   }
 `
 
