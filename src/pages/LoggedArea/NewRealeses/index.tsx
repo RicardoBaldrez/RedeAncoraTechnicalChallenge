@@ -36,13 +36,12 @@ const NewReleases = (): ReactElement => {
     }
   }, [token])
 
-
   return (
     <>
       {showModal && (
         <Modal album={chooseAlbum} closeModalOutside={closeModal} />
       )}
-      <h1 style={{marginBottom: "20px", fontSize: '2rem'}}>New Releases</h1>
+      <h1 style={{marginBottom: "20px", fontSize: '2rem'}}>Novos Lançamentos</h1>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
         {newReleases.map((release: any) => {
           return (

@@ -14,10 +14,10 @@ const Menu = (): ReactElement => {
       />
       <ul>
         <li>
-          <Link to="new-releases">New releases</Link>
+          <Link to="new-releases">Novos lançamentos</Link>
         </li>
         <li>
-          <Link to="user-top-items">User top items</Link>
+          <Link to="user-top-items">Artistas</Link>
         </li>
       </ul>
     </Wrapper>
