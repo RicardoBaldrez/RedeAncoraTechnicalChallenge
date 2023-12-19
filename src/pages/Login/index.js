@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { ReactElement, useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as Logo } from "./assets/login.svg";
 
@@ -16,15 +16,14 @@ const Login = (): ReactElement => {
   // console.log({ user });
   // console.log({ password });
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const setToken = usePersistToken();
 
   const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const client_id = "b63b0ac39cac4a0499073a0181235c3";
-    // const client_id = "b63b0ac39cac4a0499073a0181235c3c";
+    const client_id = "b63b0ac39cac4a0499073a0181235c3c";
     const client_secret = "8ce1180971ac46a48f2ab7ef6d540d37";
 
     const searchParams = new URLSearchParams({
@@ -33,15 +32,13 @@ const Login = (): ReactElement => {
       client_secret,
     });
 
-    console.log({ searchParams });
-
     axios
       .post("https://accounts.spotify.com/api/token", searchParams)
       .then((response) => {
         setToken(response?.data?.access_token);
         setUser("");
         setPassword("");
-        // navigate("/");
+        navigate("/logged-area/new-releases");
       })
       .catch((error) => {
         console.error({ error });
