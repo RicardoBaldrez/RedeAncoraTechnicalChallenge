@@ -3,32 +3,75 @@ import styled from 'styled-components';
 import '../../css-global.css';
 
 export const Wrapper = styled.div`
-  border: 5px solid yellow;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #00000048;
+  background-color: #141414;
+  & div:nth-child(2) {
+    background-color: #00000077;
+    border-radius: 0px 5px 5px 0px;
+    color: #fff;
+    font-weight: 500;
+  }
 `
 
 export const Content = styled.div`
-  border: 5px solid red;
   width: 25%;
   height: 60%;
   display: flex;
+  padding: 15px;
+  border-radius: 5px 0px 0px 5px;
   align-items: center;
+  background-color: #000;
   & div {
     flex-basis: 100%;
-    border: 2px solid white;
+    padding: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
     height: 100%;
+    & img {
+    }
     & form {
-      border: 2px solid yellow;
       display: flex;
-      align-items: center;
-      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      /* margin-top: -50px; */
+      & label, input {
+        flex-basis: 100%;
+      }
+      & label {
+        margin-bottom: 5px 0;
+      }
+      & input {
+        border: none;
+        padding: 8px;
+        margin: 5px 0 10px 0;
+        border-radius: 5px;
+      }
+      & button {
+        width: 100%;
+        color: #fff;
+        border: none;
+        background-color: var(--secondary-blue-green);
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: .8rem;
+        transition: all .3s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          background-color: var(--primary-purple);
+        }
+      }
+    }
+    & footer {
+      color: var(--primary-gray);
+      font-size: .8rem;
+      margin-top: 70px;
     }
   }
 `

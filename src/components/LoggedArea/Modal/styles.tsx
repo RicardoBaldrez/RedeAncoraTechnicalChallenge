@@ -10,16 +10,18 @@ export const Overflow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+  z-index: 19;
 `
 
 export const WrapperModal = styled.div<{ backgroundimage: string; }>`
   border-radius: 8px;
+  width: 550px;
   padding: 15px;
   background-color: #fff;
   color: #fff;
   background-color: #141414;
   border: 1px solid #ababab;
+  z-index: 99999;
   & > span {
     display: flex;
     justify-content: end;
@@ -29,7 +31,6 @@ export const WrapperModal = styled.div<{ backgroundimage: string; }>`
     }
   }
   & header {
-    min-width: 550px;
     height: 350px;
     display: flex;
     border-radius: 8px;

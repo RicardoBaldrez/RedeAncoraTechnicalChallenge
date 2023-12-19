@@ -9,35 +9,27 @@ import { usePersistToken } from "../../hooks";
 import axios from "axios";
 
 const Login = (): ReactElement => {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorNotification, setErrorNotification] = useState(false);
-
-  // console.log({ user });
-  // console.log({ password });
+  const [clientId, setClientId] = useState<string>("");
+  const [clientSecret, setClientSecret] = useState<string>("");
+  const [errorNotification, setErrorNotification] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
   const setToken = usePersistToken();
 
-  const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const client_id = "b63b0ac39cac4a0499073a0181235c3c";
-    const client_secret = "8ce1180971ac46a48f2ab7ef6d540d37";
 
     const searchParams = new URLSearchParams({
       grant_type: "client_credentials",
-      client_id,
-      client_secret,
+      client_id: clientId,
+      client_secret: clientSecret,
     });
 
-    axios
+    await axios
       .post("https://accounts.spotify.com/api/token", searchParams)
       .then((response) => {
         setToken(response?.data?.access_token);
-        setUser("");
-        setPassword("");
         navigate("/logged-area/new-releases");
       })
       .catch((error) => {
@@ -80,22 +72,23 @@ const Login = (): ReactElement => {
               height="150"
             />
             <form onSubmit={onSubmitForm}>
-              <label htmlFor="user">E-mail ou nome de usuário</label>
+              <label htmlFor="clientId">Client ID</label>
               <input
                 type="text"
-                id="user"
-                onChange={setUser}
-                placeholder="E-mail ou nome de usuário"
+                name="clientId"
+                id="clientId"
+                onChange={(e: any) => setClientId(e.target.value)}
               />
-              <label htmlFor="password">Senha</label>
+              <label htmlFor="clientSecret">Client Secret</label>
               <input
-                type="password"
-                id="password"
-                onChange={setPassword}
-                placeholder="Senha"
+                type="text"
+                name="clientSecret"
+                id="clientSecret"
+                onChange={(e: any) => setClientSecret(e.target.value)}
               />
               <button>Fazer Login</button>
             </form>
+            <footer>© 2023 - RedeAncora</footer>
           </div>
         </Content>
       </Wrapper>
