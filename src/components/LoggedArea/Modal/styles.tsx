@@ -13,7 +13,7 @@ export const Overflow = styled.div`
   z-index: 19;
 `
 
-export const WrapperModal = styled.div<{ backgroundimage: string; }>`
+export const WrapperModal = styled.div`
   border-radius: 8px;
   width: 550px;
   padding: 15px;
@@ -22,72 +22,74 @@ export const WrapperModal = styled.div<{ backgroundimage: string; }>`
   background-color: #141414;
   border: 1px solid #ababab;
   z-index: 99999;
-  & > span {
+`
+
+export const CloseModalButton = styled.span`
+  display: flex;
+  justify-content: end;
+  font-size: 1.3rem;
+  &:hover {
+    cursor: pointer;
+  }
+`
+export const HeaderModal = styled.header<{ backgroundimage: string; }>`
+  height: 350px;
+  display: flex;
+  border-radius: 8px;
+  background-image: url(${props => props.backgroundimage});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  padding: 10px;
+  margin-top: 10px;
+  & div {
+    /* border: 2px solid black; */
     display: flex;
-    justify-content: end;
-    font-size: 1.3rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    & h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 1px #000;
+    }
+    & p {
+      color: #ababab;
+      font-weight: 600;
+      text-shadow: 2px 2px 1px #000;
+    }
+  }
+  & span {
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
     &:hover {
       cursor: pointer;
     }
   }
-  & header {
-    height: 350px;
-    display: flex;
-    border-radius: 8px;
-    background-image: url(${props => props.backgroundimage});
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-    padding: 10px;
-    margin-top: 10px;
-    & div {
-      /* border: 2px solid black; */
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      color: #fff;
-      & h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-shadow: 2px 2px 1px #000;
-      }
-      & p {
-        color: #ababab;
-        font-weight: 600;
-        text-shadow: 2px 2px 1px #000;
-      }
-    }
+`
+
+export const BodyModal = styled.div`
+  margin-top: 20px;
+  text-align: start;
+  & h1 {
+    font-weight: 500;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid;
     & span {
-      font-size: 1em;
-      font-weight: bold;
-      position: absolute;
-      right: 0;
-      &:hover {
-        cursor: pointer;
-      }
+      margin-left: 10px;
     }
   }
-  & > div {
-    margin-top: 20px;
-    text-align: start;
-    & h1 {
-      font-weight: 500;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-      border-bottom: 2px solid;
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    & li {
+      margin: 5px 0;
       & span {
         margin-left: 10px;
-      }
-    }
-    & ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      & li {
-        margin: 5px 0;
-        & span {
-          margin-left: 10px;
-        }
       }
     }
   }

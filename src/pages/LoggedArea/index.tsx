@@ -3,16 +3,18 @@ import { Outlet } from 'react-router-dom'
 
 import Menu from '../../components/LoggedArea/Menu'
 
+import { WrapperBackground, WrapperContent, Content } from './styles'
+
 const LoggedArea = (): ReactElement => {
   return (
-    <div style={{display: 'flex', background: '#141414'}}>
+    <WrapperBackground>
       <Menu />
-      <div style={{marginLeft: '160px', width: '100%', padding: '20px'}}>
-        <div style={{padding: '30px 30px 0 30px', background: 'black', color: 'white', borderRadius: '10px'}}>
+      <WrapperContent>
+        <Content>
           <Outlet />
-        </div>
-      </div>
-    </div>
+        </Content>
+      </WrapperContent>
+    </WrapperBackground>
   )
 }
 

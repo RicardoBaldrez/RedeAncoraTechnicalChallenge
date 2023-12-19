@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
   background: black;
   height: 100%;
   width: 160px;
@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   top: 0;
+  & img {
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
   & ul {
     list-style: none;
     width: 100%;

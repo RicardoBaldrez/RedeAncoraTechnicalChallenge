@@ -42,7 +42,7 @@ const Login = (): ReactElement => {
     return (
       <ErrorNotificação>
         <p>
-          Erro ao se logar{" "}
+          Client ID ou Client Secrets incorretos
           <span onClick={() => setErrorNotification(false)}>X</span>
         </p>
       </ErrorNotificação>

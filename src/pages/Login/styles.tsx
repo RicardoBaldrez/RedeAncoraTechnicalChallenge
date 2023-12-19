@@ -83,8 +83,7 @@ export const ErrorNotificação = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  margin: 30px;
-  width: 180px;
+  margin: 40px;
   border-radius: 5px;
   & p {
     margin: 0;
@@ -92,6 +91,7 @@ export const ErrorNotificação = styled.div`
     display: flex;
     justify-content: space-between;
     & span {
+      margin-left: 20px;
       cursor: pointer;
     }
   }
