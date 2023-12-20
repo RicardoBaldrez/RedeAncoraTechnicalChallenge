@@ -8,17 +8,17 @@ In the project directory, you can run:
 
 ### `npm i`
 
-downloading all project dependencies.\
+Downloading all project dependencies.
 
 ### `sudo service docker start`
 
-Starting the docker service.\
+Starting the docker service.
 
 ### `sudo docker-compose up`
 
-Running the docker container with the environment.\
+Running the docker container with the environment.
 
-Before browsing the application, you must log into your account and create an application on Spotify.\
+Before browsing the application, you must log into your account and create an application on Spotify.
 Open [https://developer.spotify.com/dashboard](https://developer.spotify.com/dashboard)
 
 Once created, you must access the created application and obtain the data in the application settings: `Client_id` and `Client_secrets`, both will be used to authenticate the application.
