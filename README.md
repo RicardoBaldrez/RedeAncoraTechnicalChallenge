@@ -21,7 +21,11 @@ Running the docker container with the environment.
 Before browsing the application, you must log into your account and create an application on Spotify.
 Open [https://developer.spotify.com/dashboard](https://developer.spotify.com/dashboard)
 
-Once created, you must access the created application and obtain the data in the application settings: `Client_id` and `Client_secrets`, both will be used to authenticate the application.
+Once created, within the application configuration enter the two redirection uri's:
+- http://localhost:3000/logged-area
+- http://localhost:3000/auth
+
+Now you must access the created application and obtain the data in the application settings: `Client_id` and `Client_secrets`, both will be used to authenticate the application.
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
