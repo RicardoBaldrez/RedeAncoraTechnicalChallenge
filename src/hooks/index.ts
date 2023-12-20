@@ -1,13 +1,2 @@
-export const usePersistToken = () => {
-  return (token: string) => {
-    sessionStorage.setItem("token", token);
-  };
-};
-
-export const useGetToken = () => {
-  return sessionStorage.getItem("token");
-};
-
-export const useDeleteToken = () => {
-  return sessionStorage.removeItem("token");
-};
+export { useToken } from "./use-token";
+export { useAuth } from "./use-authentication";

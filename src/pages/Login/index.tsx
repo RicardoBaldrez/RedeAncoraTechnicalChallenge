@@ -1,51 +1,48 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { ReactElement, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { ReactElement, useState, useEffect, useCallback } from "react";
+// import { useNavigate } from "react-router-dom";
+// import axios from "axios";
 
+import { Wrapper, Content, Form, Error } from "./styles";
 import { ReactComponent as Logo } from "./assets/login.svg";
-
-import { Wrapper, Content, ErrorNotificação } from "./styles";
-import { usePersistToken } from "../../hooks";
-import axios from "axios";
 
 const Login = (): ReactElement => {
   const [clientId, setClientId] = useState<string>("");
   const [clientSecret, setClientSecret] = useState<string>("");
   const [errorNotification, setErrorNotification] = useState<boolean>(false);
 
-  const navigate = useNavigate();
+  console.log('rendering Login')
 
-  const setToken = usePersistToken();
-
-  const onSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitForm = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
+    console.log('onSubmitForm')
     event.preventDefault();
 
-    const searchParams = new URLSearchParams({
-      grant_type: "client_credentials",
+    if (!clientId || !clientSecret) {
+      setErrorNotification(true);
+      return;
+    }
+
+    const scope = 'user-read-private user-read-email user-top-read';
+    const searchParamsCodeFlow = new URLSearchParams({
+      response_type: 'code',
       client_id: clientId,
-      client_secret: clientSecret,
+      scope: scope,
+      redirect_uri: 'http://localhost:3000/auth',
+      state: `${clientId}:${clientSecret}`,
     });
 
-    await axios
-      .post("https://accounts.spotify.com/api/token", searchParams)
-      .then((response) => {
-        setToken(response?.data?.access_token);
-        navigate("/logged-area/new-releases");
-      })
-      .catch((error) => {
-        console.error({ error });
-        setErrorNotification(true);
-      });
-  };
+    // @ts-ignore
+    window.location = `https://accounts.spotify.com/authorize?${searchParamsCodeFlow}`
+  }, [clientId, clientSecret]);
 
   const ErrorNotification = () => {
     return (
-      <ErrorNotificação>
+      <Error>
         <p>
-          Client ID ou Client Secrets incorretos
+          Preencha o Client ID e/ou Client Secrets
           <span onClick={() => setErrorNotification(false)}>X</span>
         </p>
-      </ErrorNotificação>
+      </Error>
     );
   };
 
@@ -71,7 +68,7 @@ const Login = (): ReactElement => {
               width="150"
               height="150"
             />
-            <form onSubmit={onSubmitForm}>
+            <Form onSubmit={onSubmitForm}>
               <label htmlFor="clientId">Client ID</label>
               <input
                 type="text"
@@ -87,8 +84,8 @@ const Login = (): ReactElement => {
                 onChange={(e: any) => setClientSecret(e.target.value)}
               />
               <button>Fazer Login</button>
-            </form>
-            <footer>© 2023 - RedeAncora</footer>
+            </Form>
+            <footer>© 2023 - WaveBeat</footer>
           </div>
         </Content>
       </Wrapper>

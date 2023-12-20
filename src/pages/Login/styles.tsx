@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  width: 25%;
+  width: 20%;
   height: 60%;
   display: flex;
   padding: 15px;
@@ -34,40 +34,6 @@ export const Content = styled.div`
     height: 100%;
     & img {
     }
-    & form {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      /* margin-top: -50px; */
-      & label, input {
-        flex-basis: 100%;
-      }
-      & label {
-        margin-bottom: 5px 0;
-      }
-      & input {
-        border: none;
-        padding: 8px;
-        margin: 5px 0 10px 0;
-        border-radius: 5px;
-      }
-      & button {
-        width: 100%;
-        color: #fff;
-        border: none;
-        background-color: var(--secondary-blue-green);
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 5px;
-        font-weight: bold;
-        font-size: .8rem;
-        transition: all .3s ease-in-out;
-        &:hover {
-          cursor: pointer;
-          background-color: var(--primary-purple);
-        }
-      }
-    }
     & footer {
       color: var(--primary-gray);
       font-size: .8rem;
@@ -76,7 +42,41 @@ export const Content = styled.div`
   }
 `
 
-export const ErrorNotificação = styled.div`
+export const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  & label, input {
+    flex-basis: 100%;
+  }
+  & label {
+    margin-bottom: 5px 0;
+  }
+  & input {
+    border: none;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+    border-radius: 5px;
+  }
+  & button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    background-color: var(--secondary-blue-green);
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: .8rem;
+    transition: all .3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: var(--primary-purple);
+    }
+  }
+`
+
+export const Error = styled.div`
   color: white;
   font-weight: 500;
   background-color: var(--primary-red);

@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import axios from 'axios'
 
-import { useGetToken } from '../../../hooks'
+import { useToken } from '../../../hooks'
 import Modal from '../../../components/LoggedArea/Modal'
 import { Card } from './styles'
 
@@ -10,7 +10,8 @@ const NewReleases = (): ReactElement => {
   const [chooseAlbum, setChooseAlbum] = useState<any>(null)
   const [showModal, setShowModal] = useState<boolean>(false)
 
-  const token = useGetToken()
+  const { getToken } = useToken()
+  const token = getToken();
 
   const getAlbumChoose = async (id: string) => {
     await axios.get(`https://api.spotify.com/v1/albums/${id}`, {
