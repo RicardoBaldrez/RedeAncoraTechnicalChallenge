@@ -6,7 +6,6 @@ import { Wrapper, Menu, SectionBecomeSubscriber, SectionPlaylist, SectionCustomi
 
 const PresentationPage = (): ReactElement => {
   const [fixedMenu, setFixedMenu] = useState(false)
-  console.log('PresentationPage')
   window.addEventListener('scroll', () => {
     if (window.scrollY > 85) {
       return setFixedMenu(true);

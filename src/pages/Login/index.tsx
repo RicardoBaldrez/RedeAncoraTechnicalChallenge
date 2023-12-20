@@ -11,10 +11,7 @@ const Login = (): ReactElement => {
   const [clientSecret, setClientSecret] = useState<string>("");
   const [errorNotification, setErrorNotification] = useState<boolean>(false);
 
-  console.log('rendering Login')
-
   const onSubmitForm = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
-    console.log('onSubmitForm')
     event.preventDefault();
 
     if (!clientId || !clientSecret) {
@@ -22,7 +19,7 @@ const Login = (): ReactElement => {
       return;
     }
 
-    const scope = 'user-read-private user-read-email user-top-read';
+    const scope = 'user-read-private user-read-email user-top-read user-follow-read';
     const searchParamsCodeFlow = new URLSearchParams({
       response_type: 'code',
       client_id: clientId,

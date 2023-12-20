@@ -17,7 +17,7 @@ const Menu = (): ReactElement => {
           <Link to="new-releases">Novos lançamentos</Link>
         </li>
         <li>
-          <Link to="user-top-items">Artistas</Link>
+          <Link to="user-top-items">Profile</Link>
         </li>
       </ul>
     </Wrapper>

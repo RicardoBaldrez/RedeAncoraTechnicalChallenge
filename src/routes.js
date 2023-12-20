@@ -5,7 +5,7 @@ import PresentationPage from "./pages/PresentationPage";
 import Login from "./pages/Login";
 import LoggedArea from "./pages/LoggedArea";
 import NewReleases from "./pages/LoggedArea/NewRealeses";
-import Artists from "./pages/LoggedArea/Artists";
+import Profile from "./pages/LoggedArea/Profile";
 import { SpotifyAuth } from "./components/SpotifyAuth";
 
 const RoutesApplication = () => {
@@ -15,7 +15,7 @@ const RoutesApplication = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/auth" element={<SpotifyAuth />} />
       <Route path="/logged-area" element={<LoggedArea />}>
-        <Route path="user-top-items" element={<Artists />} />
+        <Route path="user-top-items" element={<Profile />} />
         <Route path="new-releases" element={<NewReleases />} />
       </Route>
     </Routes>

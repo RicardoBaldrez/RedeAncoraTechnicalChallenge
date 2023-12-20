@@ -17,7 +17,6 @@ export const SpotifyAuth = () => {
   useEffect(() => {
     authenticate()
       .then(response => {
-        console.log(response.data.access_token)
         setToken(response.data.access_token);
         navigate('/logged-area/new-releases');
       })
